@@ -1,0 +1,21 @@
+calculator interface and functionality:
+
+  structure:
+    - case
+    - display
+
+  operands:
+    - digits 0 through 9
+    - decimal
+
+  operators:
+    - add
+    - subtract
+    - multiply
+    - divide
+    - equals
+
+  functions:
+    - clear
+    - backspace
+    - sign
