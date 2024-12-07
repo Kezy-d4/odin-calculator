@@ -1,0 +1,110 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.case {
+  display: flex;
+  flex-direction: column;
+  border: solid black 1px;
+  border-radius: 4px;
+  height: 600px;
+  width: 450px;
+}
+
+.display {
+  border-bottom: solid black 1px;
+  height: 100px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.output {
+font-size: 60px;
+margin: 0 4px;
+}
+
+.functions {
+  height: 100px;
+  display: flex;
+}
+
+.sign,
+.backspace,
+.clear {
+  flex: 1;
+  margin: 2px 1px 1px;
+  font-size: larger;
+}
+
+.operands-and-operators {
+  flex: 1;
+  display: flex;
+}
+
+.operands {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.operand {
+  flex: 1;
+  font-size: x-large;
+  margin: 1px;
+}
+
+.zero, 
+.decimal{
+  height: 115px;
+}
+
+.zero {
+  flex: 2.05;
+}
+
+.operators {
+  flex: 1;
+  flex-direction: column;
+  display: flex;
+}
+
+.operator {
+  flex: 1;
+  font-size: x-large;
+  margin: 1px;
+}
+
+.add-and-subtract,
+.multiply-and-divide,
+.equals {
+  flex: 1;
+  display: flex;
+}
+
+.add-and-subtract, 
+.multiply-and-divide {
+  flex: 1.205;
+}
+
+.seven-through-nine,
+.six-through-four,
+.one-through-three,
+.zero-and-decimal {
+  display: flex;
+  flex: 1;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
