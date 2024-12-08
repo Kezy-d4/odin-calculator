@@ -14,8 +14,8 @@ function divide(operand1, operand2) {
   return operand1 / operand2;
 }
 
-let operandInput1 = 0;
-let operandInput2 = 0;
+let operandInput1 = '';
+let operandInput2 = '';
 let operatorInput = '';
 
 function operate(operand1, operand2, operator) {
@@ -33,3 +33,41 @@ function operate(operand1, operand2, operator) {
       return divide(operand1, operand2);
   }
 }
+
+const output = document.querySelector('.output');
+const operands = document.querySelectorAll('.operand');
+const operators = document.querySelectorAll('.add-and-subtract > button, .multiply-and-divide > button');
+const equals = document.querySelector('.equals > button');
+
+output.textContent = '0';
+
+operands.forEach((operand) => {
+  operand.addEventListener('click', (e) => {
+
+    if (!operatorInput) {
+      operandInput1 += e.target.textContent;
+      console.log('operandInput1:', operandInput1);
+      output.textContent = operandInput1;
+
+    } else if (operatorInput) {
+      operandInput2 += e.target.textContent;
+      console.log('operandInput2:', operandInput2);
+      output.textContent = operandInput2;
+    }
+  });
+});
+
+operators.forEach((operator) => {
+  operator.addEventListener('click', (e) => {
+
+    operatorInput = e.target.textContent;
+    console.log('operatorInput:', operatorInput);
+  });
+});
+
+equals.addEventListener('click', () => {
+
+  let result = operate(parseInt(operandInput1), parseInt(operandInput2), operatorInput);
+  output.textContent = result;
+});
+
