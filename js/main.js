@@ -52,7 +52,8 @@ function populateDisplay(e) {
 
 operands.forEach(operand => {
   operand.addEventListener('click', (e) => {
-    if (output.textContent.includes('.') && e.target.textContent === '.') {
+    if (output.textContent.includes('.') && e.target.textContent === '.' ||
+      output.textContent.length === 12) {
       return;
 
     } else {
