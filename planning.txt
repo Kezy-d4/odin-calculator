@@ -19,3 +19,51 @@ calculator interface and functionality:
     - clear
     - backspace
     - sign
+
+/*
+const clear = document.querySelector('.clear');
+
+function allClear() {
+  output.textContent = '0';
+}
+
+clear.addEventListener('click', () => allClear());
+
+
+function storeOperand() {
+  operandInput1 = output.textContent;
+  console.log('operandInput:', operandInput1);
+}
+
+storeOperand();
+
+const output = document.querySelector('.output');
+const operands = document.querySelectorAll('.operand');
+const decimal = document.querySelector('.decimal');
+const operators = document.querySelectorAll('.operator');
+
+function populateDisplay(e) {
+  output.textContent += e.target.textContent;
+}
+
+operands.forEach(operand => {
+  operand.addEventListener('click', (e) => {
+
+    if (output.textContent === '0' && e.target.textContent === '.') {
+      output.textContent = '0';
+      populateDisplay(e);
+
+    } else if (output.textContent === '0' && e.target.textContent !== '.') {
+      output.textContent = '';
+      populateDisplay(e);
+
+    } else if (e.target.textContent === '.' && output.textContent.includes('.')) {
+      return;
+      
+    } else {
+      populateDisplay(e);
+    }
+  });
+});
+*/
+
