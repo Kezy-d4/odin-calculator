@@ -42,16 +42,22 @@ const equals = document.querySelector('.equals > button');
 output.textContent = operandInput1;
 
 function populateDisplay(e) {
-  if (output.textContent === '0') {
+  if (output.textContent === '0' && e.target.textContent !== '.') {
     output.textContent = e.target.textContent;
+
   } else {
-    output.textContent += e.target.textContent
+    output.textContent += e.target.textContent;
   }
 }
 
 operands.forEach(operand => {
   operand.addEventListener('click', (e) => {
-    populateDisplay(e);
+    if (output.textContent.includes('.') && e.target.textContent === '.') {
+      return;
+
+    } else {
+      populateDisplay(e);
+    }
   });
 });
 
