@@ -14,8 +14,8 @@ function divide(operand1, operand2) {
   return operand1 / operand2;
 }
 
-let operandInput1 = '';
-let operandInput2 = '';
+let operandInput1 = '0';
+let operandInput2 = '0';
 let operatorInput = '';
 
 function operate(operand1, operand2, operator) {
@@ -39,8 +39,38 @@ const operands = document.querySelectorAll('.operand');
 const operators = document.querySelectorAll('.add-and-subtract > button, .multiply-and-divide > button');
 const equals = document.querySelector('.equals > button');
 
-output.textContent = '0';
+output.textContent = operandInput1;
 
+function populateDisplay(e) {
+  if (output.textContent === '0') {
+    output.textContent = e.target.textContent;
+  } else {
+    output.textContent += e.target.textContent
+  }
+}
+
+operands.forEach(operand => {
+  operand.addEventListener('click', (e) => {
+    populateDisplay(e);
+  });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 operands.forEach((operand) => {
   operand.addEventListener('click', (e) => {
 
@@ -70,4 +100,4 @@ equals.addEventListener('click', () => {
   let result = operate(parseInt(operandInput1), parseInt(operandInput2), operatorInput);
   output.textContent = result;
 });
-
+*/
