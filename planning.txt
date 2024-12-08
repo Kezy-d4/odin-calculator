@@ -20,6 +20,39 @@ calculator interface and functionality:
     - backspace
     - sign
 
+To-Do:
+
+  bugs and ways the user could break the calculator:
+    - can input multiple decimals 
+      solution: Check if operand already contains a decimal, if so, disable the decimal button until the operand is committed.
+
+    - can divide either operand by 0 or negative 0
+      solution: Check if the operation being performed is division and if either one or both operands are 0 or negative 0. Display a snarky message instead of a result when the user attempts such operation.
+
+    - can overflow display when inputting operand
+      solution: Limit operand input to 12 digits including decimal.
+
+    - can overflow display when result contains many decimal places
+      solution: Round results to 2 decimal places.
+
+    - can overflow display when result is very large
+      solution: Display a snarky message instead of a result when result exceeds 12 digits including decimal. 
+
+    - can overflow display with many irrelevant starting 0's
+      solution: Allow input of 0's only after a non-zero starting number.
+
+    - can select operator before operand
+    - can perform equals before operand
+
+  features still to add:
+    - decimal
+    - allClear
+    - backspace
+    - change sign
+
+    
+
+
 /*
 const clear = document.querySelector('.clear');
 
