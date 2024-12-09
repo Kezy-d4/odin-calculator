@@ -37,6 +37,7 @@ function operate(operand1, operand2, operator) {
 const output = document.querySelector('.output');
 const sign = document.querySelector('.sign');
 const backspace = document.querySelector('.backspace');
+const clear = document.querySelector('.clear');
 const operands = document.querySelectorAll('.operand');
 const operators = document.querySelectorAll(
   '.add-and-subtract > button, .multiply-and-divide > button'
@@ -91,6 +92,13 @@ backspace.addEventListener('click', () => {
 
     output.textContent = '0';
   }
+});
+
+clear.addEventListener('click', () => {
+  output.textContent = '0';
+  operandInput1 = '';
+  operandInput2 = '';
+  operatorInput = '';
 });
 
 
