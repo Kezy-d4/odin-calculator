@@ -56,10 +56,15 @@ function populateDisplay(e) {
 
 operands.forEach(operand => {
   operand.addEventListener('click', (e) => {
-    if (output.textContent.includes('.') && e.target.textContent === '.' ||
-    output.textContent.length === 12) {
-
+    if (output.textContent.includes('.') && e.target.textContent === '.') {
       return;
+
+    } else if (output.textContent.length >= 12) {
+      if (output.textContent.includes('-') && output.textContent.length < 13) {
+        populateDisplay(e);
+      } else {
+        return;
+      }
 
     } else {
       populateDisplay(e);
@@ -83,7 +88,7 @@ backspace.addEventListener('click', () => {
 
   if (output.textContent === '' || output.textContent === '-' ||
   output.textContent === '-0' || output.textContent === '-0.') {
-    
+
     output.textContent = '0';
   }
 });
