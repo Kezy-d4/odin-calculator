@@ -35,9 +35,12 @@ function operate(operand1, operand2, operator) {
 }
 
 const output = document.querySelector('.output');
+const sign = document.querySelector('.sign');
 const backspace = document.querySelector('.backspace');
 const operands = document.querySelectorAll('.operand');
-const operators = document.querySelectorAll('.add-and-subtract > button, .multiply-and-divide > button');
+const operators = document.querySelectorAll(
+  '.add-and-subtract > button, .multiply-and-divide > button'
+);
 const equals = document.querySelector('.equals > button');
 
 output.textContent = '0';
@@ -54,7 +57,8 @@ function populateDisplay(e) {
 operands.forEach(operand => {
   operand.addEventListener('click', (e) => {
     if (output.textContent.includes('.') && e.target.textContent === '.' ||
-      output.textContent.length === 12) {
+    output.textContent.length === 12) {
+
       return;
 
     } else {
@@ -63,10 +67,24 @@ operands.forEach(operand => {
   });
 });
 
+sign.addEventListener('click', () => {
+  if (!output.textContent.includes('-') && 
+  output.textContent !== '0' && output.textContent !== '0.') {
+
+    output.textContent = '-' + output.textContent;
+
+  } else if (output.textContent.includes('-')) {
+    output.textContent = output.textContent.slice(1);
+  }
+});
+
 backspace.addEventListener('click', () => {
   output.textContent = output.textContent.slice(0, -1);
-  if (output.textContent === '') {
-    output.textContent = '0'
+
+  if (output.textContent === '' || output.textContent === '-' ||
+  output.textContent === '-0' || output.textContent === '-0.') {
+    
+    output.textContent = '0';
   }
 });
 
