@@ -40,6 +40,7 @@ function populateDisplay(e) {
 }
 
 function selectOperand(e) {
+
   if (output.textContent.includes('.') && e.target.textContent === '.') {
     return;
 

@@ -54,6 +54,25 @@ operators.forEach(operator => {
       }
     }
 
+    if (operandInput1) {
+      if (operandInput2 === '') {
+        if (operatorInput === '=') {
+          result = operandInput1;
+
+          if (containsDecimals(result)) { 
+            result = result.toFixed(1);
+          } 
+
+          output.textContent = result;
+
+        } else if (operatorInput !== '=') {
+
+        }
+      }
+    }
+
+
+
   });
 });
 
