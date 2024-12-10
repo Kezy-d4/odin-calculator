@@ -15,12 +15,8 @@ const equals = document.querySelector('.equals > button');
 output.textContent = '0';
 
 operands.forEach(operand => {
-  operand.addEventListener('click', (e) => selectOperand(e));
+  operand.addEventListener('click', (e) => populateDisplay(e));
 });
-
-sign.addEventListener('click', () => changeSign());
-
-backspace.addEventListener('click', () => undo());
 
 clear.addEventListener('click', () => allClear());
 
@@ -38,11 +34,14 @@ clear.addEventListener('click', () => allClear());
 
 
 
+// sign.addEventListener('click', () => changeSign());
+
+// backspace.addEventListener('click', () => undo());
 
 /*
 operands.forEach((operand) => {
   operand.addEventListener('click', (e) => {
-
+    
     if (!operatorInput) {
       operandInput1 += e.target.textContent;
       console.log('operandInput1:', operandInput1);
