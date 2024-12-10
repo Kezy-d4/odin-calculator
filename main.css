@@ -22,14 +22,14 @@
 
 .display {
   border-bottom: solid black 1px;
-  height: 100px;
+  height: 115px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
 }
 
 .output {
-font-size: 60px;
+font-size: 70px;
 margin: 0 4px;
 }
 
@@ -65,7 +65,7 @@ margin: 0 4px;
 
 .zero, 
 .decimal{
-  height: 138px;
+  height: 133px;
 }
 
 .decimal {
