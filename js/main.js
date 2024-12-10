@@ -35,7 +35,6 @@ operators.forEach(operator => {
     } else {
       displayContents = parseFloat(displayContents);
     }
-    console.log('displayContents:', displayContents);
 
     if (operandInput1 === '') {
       operandInput1 = displayContents;
@@ -49,7 +48,6 @@ operators.forEach(operator => {
         if (containsDecimals(result)) { 
           result = result.toFixed(1);
         } 
-        console.log('result:', result);
 
         output.textContent = result;
         console.log('final display:', output.textContent);

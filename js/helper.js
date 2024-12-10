@@ -60,6 +60,7 @@ function allClear() {
   operandInput1 = '';
   operandInput2 = '';
   operatorInput = '';
+  operandCommitted = false;
 }
 
 function undo() {
