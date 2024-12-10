@@ -63,6 +63,10 @@ function allClear() {
 }
 
 function undo() {
+  if (operandCommitted) {
+    return;
+  }
+
   output.textContent = output.textContent.slice(0, -1);
 
   if (output.textContent === '' || output.textContent === '-' ||
@@ -73,6 +77,10 @@ function undo() {
 }
 
 function changeSign() {
+  if (operandCommitted) {
+    return;
+  }
+
   if (!output.textContent.includes('-') && 
   output.textContent !== '0' && output.textContent !== '0.') {
 
@@ -80,5 +88,13 @@ function changeSign() {
 
   } else if (output.textContent.includes('-')) {
     output.textContent = output.textContent.slice(1);
+  }
+}
+
+function containsDecimals(number) {
+  if (number % 1 !== 0) {
+    return true;
+  } else {
+    return false;
   }
 }
