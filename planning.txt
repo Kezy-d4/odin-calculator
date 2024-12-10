@@ -24,33 +24,77 @@ To-Do:
 
   bugs and ways the user could break the calculator:
     - can input multiple decimals 
-      solution: Check if operand already contains a decimal, if so, disable the decimal button until the operand is committed.
+      solution: Check if operand already contains a decimal, if so, disable the decimal button until the operand is committed. ✅
 
     - can divide either operand by 0 or negative 0
       solution: Check if the operation being performed is division and if either one or both operands are 0 or negative 0. Display a snarky message instead of a result when the user attempts such operation.
 
-    - can overflow display when inputting operand
-      solution: Limit operand input to 12 digits including decimal.
+    - can overflow display when inputting operand 
+      solution: Limit operand input to 12 digits including decimal. ✅
 
     - can overflow display when result contains many decimal places
-      solution: Round results to 2 decimal places.
+      solution: Round display results to 2 decimal places (keep the accurate number for internal calculations).
 
-    - can overflow display when result is very large
-      solution: Display a snarky message instead of a result when result exceeds 12 digits including decimal. 
+    - can overflow display when result contains many digits
+      solution: Display a snarky message instead of a result when result exceeds 12 digits including decimal, then reset calculator. 
 
-    - can overflow display with many irrelevant starting 0's
-      solution: Allow input of 0's only after a non-zero starting number.
+    - can overflow display with many irrelevant starting 0's 
+      solution: Allow input of 0's only after a non-zero starting number. ✅
 
     - can select operator before operand
     - can perform equals before operand
 
   features still to add:
-    - decimal
-    - allClear
-    - backspace
-    - change sign
+    - decimal ✅
+    - allClear ✅
+    - backspace ✅
+    - change sign ✅
+    - operations
 
-    
+  Application flow for operations:
+    - user selects any operator.
+    - store operatorInput.
+
+    - if operandInput1 has yet to be assigned,
+      - store contents of display as is in operandInput1.
+        - if display amounts to any form of zero, negative zero, or zero with many decimals, simply store it as 0.
+
+      - disable backspace and sign change for the time being to prevent further manipulation of committed operand.
+
+      - if operatorInput was equals,
+        - result is operandInput1.
+        - display result.
+          - if result contains decimal places, round display to two decimal places.
+      
+    - if operandInput1 has been assigned,
+
+      - if operandInput2 has yet to be assigned,
+        - if operatorInput was equals,
+          - result is operandInput1.
+          - display result.
+            - if result contains decimal places, round display to two decimal places.
+
+        - if operatorInput was something besides equals,
+          - if user begins entering next operand,
+            - begin populating display with user selections.
+            - reenable backspace and sign change for the time being.
+
+            - user selects any operator.
+            - store operatorInput.
+              - store contents of display as is in operandInput2.
+                - if display amounts to any form of zero, negative zero, or zero with many decimals, simply store it as 0.
+              
+              - if operatorInput is division and either operandInput is 0, display an error modal and reset the calculator.
+              - result is operandInput1 (operatorInput) operandInput2.
+              - display result.
+                - if result contains decimal places, round display to two decimal places.
+                - if rounded display exceeds 12 digits, display an error modal and reset the calculator.
+              - store result in operandInput1 and reset operandInput2.
+
+              
+
+        
+
 
 
 /*
