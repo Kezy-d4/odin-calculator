@@ -3,7 +3,6 @@ let operandInput2 = '';
 let operatorInput = '';
 
 const output = document.querySelector('.output');
-const sign = document.querySelector('.sign');
 const backspace = document.querySelector('.backspace');
 const clear = document.querySelector('.clear');
 const operands = document.querySelectorAll('.operand');

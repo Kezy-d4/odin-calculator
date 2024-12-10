@@ -31,7 +31,7 @@ function operate(operand1, operand2, operator) {
 }
 
 function populateDisplay(e) {
-  if (output.textContent.length === 16) {
+  if (output.textContent.length === 10) {
     return;
 
   } else if (output.textContent.includes('.') && e.target.textContent === '.') {

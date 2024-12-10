@@ -17,7 +17,7 @@
   border: solid black 1px;
   border-radius: 4px;
   height: 700px;
-  width: 650px;
+  width: 450px;
 }
 
 .display {
@@ -38,8 +38,12 @@ margin: 0 4px;
   display: flex;
 }
 
-.sign,
-.backspace,
+.backspace {
+  flex: 2.05;
+  margin: 2px 1px 1px;
+  font-size: larger;
+}
+
 .clear {
   flex: 1;
   margin: 2px 1px 1px;
@@ -52,7 +56,7 @@ margin: 0 4px;
 }
 
 .operands {
-  width: 433px;
+  flex: 2;
   display: flex;
   flex-direction: column;
 }
