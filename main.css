@@ -16,8 +16,8 @@
   flex-direction: column;
   border: solid black 1px;
   border-radius: 4px;
-  height: 600px;
-  width: 450px;
+  height: 700px;
+  width: 650px;
 }
 
 .display {
@@ -34,7 +34,7 @@ margin: 0 4px;
 }
 
 .functions {
-  height: 100px;
+  height: 122px;
   display: flex;
 }
 
@@ -52,7 +52,7 @@ margin: 0 4px;
 }
 
 .operands {
-  width: 300px;
+  width: 433px;
   display: flex;
   flex-direction: column;
 }
@@ -65,7 +65,11 @@ margin: 0 4px;
 
 .zero, 
 .decimal{
-  height: 115px;
+  height: 138px;
+}
+
+.decimal {
+  font-size: xx-large;
 }
 
 .zero {

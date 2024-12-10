@@ -43,8 +43,8 @@ function selectOperand(e) {
   if (output.textContent.includes('.') && e.target.textContent === '.') {
     return;
 
-  } else if (output.textContent.length >= 12) {
-    if (output.textContent.includes('-') && output.textContent.length < 13) {
+  } else if (output.textContent.length >= 18) {
+    if (output.textContent.includes('-') && output.textContent.length < 19) {
       populateDisplay(e);
     } else {
       return;
