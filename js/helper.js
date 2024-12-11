@@ -89,7 +89,7 @@ function containsAnyDecimals(num) {
   }
 }
 
-function resetInputs() {
+function resetInputsAndDisplay() {
   output.textContent = '0';
   operatorInput = '';
   operandInput = '';

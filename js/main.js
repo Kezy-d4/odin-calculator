@@ -26,7 +26,7 @@ operands.forEach(operand => {
       populateDisplay(e);
     } else if (operatorInput !== '') {
       assignOperator();
-      resetInputs();
+      resetInputsAndDisplay();
       populateDisplay(e);
     }
   });
@@ -43,7 +43,7 @@ operators.forEach(operator => {
     if (operatorInput === '' && expression.operand1 !== '' && expression.operand2 !== '' &&
     expression.operator !== '') {
 
-      if (expression.operand1 === 0 || expression.operand2 === 0 && expression.operator === '÷') {
+      if ((expression.operand1 === 0 || expression.operand2 === 0) && expression.operator === '÷') {
         alert('You can\'t divide by zero! The calculator will be reset.');
         allClear();
       }
