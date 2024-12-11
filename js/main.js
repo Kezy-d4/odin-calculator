@@ -1,6 +1,12 @@
-let operandInput1 = '';
-let operandInput2 = '';
 let operatorInput = '';
+let operandInput = '';
+let result = 0;
+
+let expression = {
+  operand1: '',
+  operand2: '',
+  operator: '',
+};
 
 const output = document.querySelector('.output');
 const backspace = document.querySelector('.backspace');
@@ -14,10 +20,65 @@ const equals = document.querySelector('.equals > button');
 output.textContent = '0';
 
 operands.forEach(operand => {
-  operand.addEventListener('click', (e) => populateDisplay(e));
+  operand.addEventListener('click', (e) => {
+
+    if (operatorInput === '') {
+      populateDisplay(e);
+    } else if (operatorInput !== '') {
+      assignOperator();
+      resetInputs();
+      populateDisplay(e);
+    }
+  });
+});
+
+operators.forEach(operator => {
+  operator.addEventListener('click', (e) => {
+
+    if (operatorInput === '') {
+      storeOperandInput();
+      assignOperand();
+    }
+
+    if (operatorInput === '' && expression.operand1 !== '' && expression.operand2 !== '' &&
+    expression.operator !== '') {
+
+      if (expression.operand1 === 0 || expression.operand2 === 0 && expression.operator === '÷') {
+        alert('You can\'t divide by zero! The calculator will be reset.');
+        allClear();
+      }
+
+      result = operate(expression.operand1, expression.operand2, expression.operator);
+      
+      if (containsAnyDecimals(result)) {
+        result = parseFloat(result.toFixed(1));
+      } 
+      expression.operand1 = result;
+      expression.operand2 = '';
+
+      if (result.toString().length > 10) {
+        alert('That result contains too many digits! The calculator will be reset.');
+        allClear();
+      } else {
+        output.textContent = result;
+      }
+    }
+    storeOperatorInput(e);
+  });
 });
 
 clear.addEventListener('click', () => allClear());
+
+
+
+
+
+
+
+
+
+
+
 
 
 

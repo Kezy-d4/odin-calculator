@@ -1,5 +1,4 @@
 calculator interface and functionality:
-
   structure:
     - case
     - display
@@ -18,10 +17,37 @@ calculator interface and functionality:
   functions:
     - clear
     - backspace
-    - sign
 
+features still to add:
+  - decimal ✅
+  - allClear ✅
+  - backspace 
+  - operations
+
+flow:
+- User begins inputting their first operand.
+  - User selects any operator.
+    - Operand 1 is parsed and committed to expression.
+    - Operand 1 can no longer be manipulated.
+    - Chosen operator is appended to display.
+    - User may change their operator if desired at this point.
+
+- User begins inputting their second operand.
+  - Operator is committed to expression. 
+  - Display and inputs are reset.
+    - User selects any operator.
+      - Chosen operator is appended to display.
+      - Operand 2 is parsed and committed to expression.
+      - Result of expression: operand 1 (operator) operand 2 is evaluated and assigned.
+      - If operation is division and either operand is 0, display an error modal and reset the calculator.
+      - Value of result is assigned to operand 1 for future calculations.
+      - Value of operand 2 is reset for future calculations.
+      - Check if result contains any decimals, if so, round it to one decimal place.
+      - If rounded result still exceeds 10 characters, display an error modal and reset the calculator.
+      - Otherwise, display the result.
+
+/*
 To-Do:
-
   bugs and ways the user could break the calculator:
     - can input multiple decimals 
       solution: Check if operand already contains a decimal, if so, disable the decimal button until the operand is committed. ✅
@@ -43,14 +69,9 @@ To-Do:
 
     - can select operator before operand
     - can perform equals before operand
+*/
 
-  features still to add:
-    - decimal ✅
-    - allClear ✅
-    - backspace ✅
-    - change sign ✅
-    - operations
-
+//
   Application flow for operations:
     - user selects any operator.
     - store operatorInput.
@@ -90,12 +111,6 @@ To-Do:
                 - if result contains decimal places, round display to two decimal places.
                 - if rounded display exceeds 12 digits, display an error modal and reset the calculator.
               - store result in operandInput1 and reset operandInput2.
-
-              
-
-        
-
-
 
 /*
 const clear = document.querySelector('.clear');
