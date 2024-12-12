@@ -52,7 +52,6 @@ function storeOperatorInput(e) {
 
 function assignOperator() {
   expression.operator = operatorInput;
-  console.log('operator:', expression.operator);
 }
 
 function appendOperator() {
@@ -67,13 +66,11 @@ function appendOperator() {
 
 function storeOperandInput() {
   operandInput = parseFloat(output.textContent);
-  console.log('operandInput:', operandInput);
 }
 
 function assignOperand() {
   if (expression.operand1 === '') {
     expression.operand1 = operandInput;
-    console.log('operand1:', expression.operand1);
 
   } else if (expression.operand1 !== '') {
     expression.operand2 = operandInput;
@@ -103,6 +100,7 @@ function allClear() {
   expression.operand1 = '';
   expression.operand2 = '';
   expression.operator = '';
+  console.clear();
 }
 
 

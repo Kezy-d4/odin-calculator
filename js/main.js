@@ -29,7 +29,6 @@ operands.forEach(operand => {
       resetInputsAndDisplay();
       populateDisplay(e);
     }
-    console.log(expression);
   });
 });
 
@@ -47,20 +46,28 @@ operators.forEach(operator => {
       if ((expression.operand1 === 0 || expression.operand2 === 0) && expression.operator === '÷') {
         alert('You can\'t divide by zero! The calculator will be reset.');
         allClear();
+        return;
       }
 
       result = operate(expression.operand1, expression.operand2, expression.operator);
-
-      expression.operand1 = result;
-      expression.operand2 = '';
       
       if (containsAnyDecimals(result)) {
         result = parseFloat(result.toFixed(1));
       } 
 
+      if (result === -0) {
+        result = 0;
+      }
+      console.log('result:', result);
+      console.log('resultLength:', result.toString().length);
+
+      expression.operand1 = result;
+      expression.operand2 = '';
+
       if (result.toString().length > 10) {
-        alert('That result contains too many digits! The calculator will be reset.');
+        alert('That result contains too many characters to display! The calculator will be reset.');
         allClear();
+        return;
       } else {
         output.textContent = result;
       }
@@ -70,6 +77,8 @@ operators.forEach(operator => {
 });
 
 clear.addEventListener('click', () => allClear());
+
+document.addEventListener('click', () => console.log(expression));
 
 
 
