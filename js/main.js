@@ -29,6 +29,7 @@ operands.forEach(operand => {
       resetInputsAndDisplay();
       populateDisplay(e);
     }
+    console.log(expression);
   });
 });
 
@@ -49,12 +50,13 @@ operators.forEach(operator => {
       }
 
       result = operate(expression.operand1, expression.operand2, expression.operator);
+
+      expression.operand1 = result;
+      expression.operand2 = '';
       
       if (containsAnyDecimals(result)) {
         result = parseFloat(result.toFixed(1));
       } 
-      expression.operand1 = result;
-      expression.operand2 = '';
 
       if (result.toString().length > 10) {
         alert('That result contains too many digits! The calculator will be reset.');
