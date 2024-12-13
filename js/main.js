@@ -13,6 +13,13 @@ const backspace = document.querySelector('.backspace');
 const clear = document.querySelector('.clear');
 const operands = document.querySelectorAll('.operand');
 const operators = document.querySelectorAll('.operator');
+const multiplication = document.querySelector('.multiply');
+const division = document.querySelector('.divide');
+const equals = document.querySelector('.equals > button');
+
+multiplication.alternativeKey = '*';
+division.alternativeKey = '/';
+equals.alternativeKey = 'Enter';
 
 output.textContent = '0';
 
@@ -89,7 +96,31 @@ backspace.addEventListener('click', () => {
 });
 
 document.addEventListener('click', () => console.log(expression));
+document.addEventListener('keydown', () => console.log(expression));
 
+// Keyboard support
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'c' || e.key === 'C') allClear();
+
+  if (e.key === 'Backspace') {
+    let clickEvent = new Event('click');
+    backspace.dispatchEvent(clickEvent);
+  }
+
+  operands.forEach(operand => {
+    if (e.key === operand.textContent) {
+      let clickEvent = new Event('click');
+      operand.dispatchEvent(clickEvent);
+    }  
+  });
+
+  operators.forEach(operator => {
+    if (e.key === operator.textContent || e.key === operator.alternativeKey) {
+      let clickEvent = new Event('click');
+      operator.dispatchEvent(clickEvent);      
+    }
+  });
+});
 
 
 

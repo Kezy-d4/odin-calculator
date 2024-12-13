@@ -54,16 +54,6 @@ function assignOperator() {
   expression.operator = operatorInput;
 }
 
-function appendOperator() {
-  if (output.textContent.includes('+') || output.textContent.includes('-') ||
-  output.textContent.includes('x') || output.textContent.includes('÷')) {
-
-    output.textContent = output.textContent.slice(0, -1);
-  }
-
-  output.textContent += operatorInput;
-}
-
 function storeOperandInput() {
   operandInput = parseFloat(output.textContent);
 }
