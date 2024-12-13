@@ -12,15 +12,16 @@ const output = document.querySelector('.output');
 const backspace = document.querySelector('.backspace');
 const clear = document.querySelector('.clear');
 const operands = document.querySelectorAll('.operand');
-const operators = document.querySelectorAll(
-  '.add-and-subtract > button, .multiply-and-divide > button'
-);
-const equals = document.querySelector('.equals > button');
+const operators = document.querySelectorAll('.operator');
 
 output.textContent = '0';
 
 operands.forEach(operand => {
   operand.addEventListener('click', (e) => {
+
+    if (operatorInput === '=') {
+      allClear();
+    }
 
     if (operatorInput === '') {
       populateDisplay(e);
@@ -72,7 +73,8 @@ operators.forEach(operator => {
         output.textContent = result;
       }
     }
-    storeOperatorInput(e);
+
+    storeOperatorInput(e);      
   });
 });
 

@@ -24,6 +24,9 @@ features still to add:
   - backspace 
   - operations
 
+equals flow:
+
+
 flow:
 - User begins inputting their first operand.
   - User selects any operator.
