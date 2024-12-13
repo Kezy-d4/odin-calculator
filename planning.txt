@@ -18,28 +18,17 @@ calculator interface and functionality:
     - clear
     - backspace
 
-features still to add:
-  - decimal ✅
-  - allClear ✅
-  - backspace 
-  - operations
-
-equals flow:
-
-
 flow:
 - User begins inputting their first operand.
   - User selects any operator.
     - Operand 1 is parsed and committed to expression.
     - Operand 1 can no longer be manipulated.
-    - Chosen operator is appended to display.
     - User may change their operator if desired at this point.
 
 - User begins inputting their second operand.
   - Operator is committed to expression. 
   - Display and inputs are reset.
     - User selects any operator.
-      - Chosen operator is appended to display.
       - Operand 2 is parsed and committed to expression.
       - Result of expression: operand 1 (operator) operand 2 is evaluated and assigned.
       - If operation is division and either operand is 0, display an error modal and reset the calculator.
@@ -53,13 +42,13 @@ flow:
 To-Do:
   bugs and ways the user could break the calculator:
     - can input multiple decimals 
-      solution: Check if operand already contains a decimal, if so, disable the decimal button until the operand is committed. ✅
+      solution: Check if operand already contains a decimal, if so, disable the decimal button until the operand is committed. 
 
     - can divide either operand by 0 or negative 0
       solution: Check if the operation being performed is division and if either one or both operands are 0 or negative 0. Display a snarky message instead of a result when the user attempts such operation.
 
     - can overflow display when inputting operand 
-      solution: Limit operand input to 12 digits including decimal. ✅
+      solution: Limit operand input to 12 digits including decimal. 
 
     - can overflow display when result contains many decimal places
       solution: Round display results to 2 decimal places (keep the accurate number for internal calculations).
@@ -68,7 +57,7 @@ To-Do:
       solution: Display a snarky message instead of a result when result exceeds 12 digits including decimal, then reset calculator. 
 
     - can overflow display with many irrelevant starting 0's 
-      solution: Allow input of 0's only after a non-zero starting number. ✅
+      solution: Allow input of 0's only after a non-zero starting number. 
 
     - can select operator before operand
     - can perform equals before operand
