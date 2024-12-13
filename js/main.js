@@ -80,6 +80,14 @@ operators.forEach(operator => {
 
 clear.addEventListener('click', () => allClear());
 
+backspace.addEventListener('click', () => {
+  if (operatorInput !== '') {
+    return;
+  }
+  
+  undo();
+});
+
 document.addEventListener('click', () => console.log(expression));
 
 

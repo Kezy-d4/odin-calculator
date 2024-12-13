@@ -103,6 +103,13 @@ function allClear() {
   console.clear();
 }
 
+function undo() {
+  output.textContent = output.textContent.slice(0, -1);
+
+  if (output.textContent === '') {
+    output.textContent = '0';
+  }
+}
 
 
 
@@ -118,15 +125,6 @@ function allClear() {
 
 
 
-// function undo() {
-//   output.textContent = output.textContent.slice(0, -1);
-
-//   if (output.textContent === '' || output.textContent === '-' ||
-//   output.textContent === '-0' || output.textContent === '-0.') {
-
-//     output.textContent = '0';
-//   }
-// }
 
 // function changeSign() {
 //   if (!output.textContent.includes('-') && 
