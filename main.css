@@ -160,3 +160,10 @@ button:hover {
   cursor: pointer;
 }
 
+.clear:active,
+.backspace:active,
+.operand:active,
+.operator:active {
+  background-color: rgba(68, 72, 90, 0.87);
+}
+
