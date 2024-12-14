@@ -4,7 +4,7 @@ The capstone project for The Odin Project Foundations path: A simple calculator 
 [Live Demo](https://kezy-d4.github.io/odin-calculator/)
 
 # Interface
-Final:
+
 ![Final Interface](./img/calc.png)
-During development:
+
 ![Interface During Development](./img/calc-in-development.png)
