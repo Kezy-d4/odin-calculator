@@ -2,6 +2,7 @@
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
+  color: rgb(255, 255, 255)
 }
 
 .container {
@@ -14,40 +15,61 @@
 .case {
   display: flex;
   flex-direction: column;
-  border: solid black 1px;
-  border-radius: 4px;
+  border: solid black 3px;
+  border-radius: 6px;
   height: 700px;
   width: 450px;
+  background-color: rgb(0, 0, 0);
 }
 
 .display {
-  border-bottom: solid black 1px;
+  border: solid rgba(75, 83, 94, 0.623) 8px;
+  border-radius: 3px;
   height: 115px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  background-color: rgba(0, 0, 0, 0.925);
+  margin: 1px 1px 2px;
 }
 
 .output {
 font-size: 70px;
 margin: 0 4px;
+color: rgb(255, 72, 0);
+font-family: monospace;
 }
 
 .functions {
   height: 122px;
   display: flex;
+  margin-bottom: 2px;
+  gap: 1px;
 }
 
 .backspace {
   flex: 2.05;
-  margin: 2px 1px 1px;
-  font-size: larger;
+  margin: 2px 2px 0;
+  font-size: 22px;
 }
 
 .clear {
   flex: 1;
-  margin: 2px 1px 1px;
-  font-size: larger;
+  margin: 2px 1px 0;
+  font-size: 22px;
+}
+
+.backspace,
+.clear {
+  background-color: rgba(68, 72, 90, 0.87);
+  font-weight: bolder;
+  border: solid lightslategray 1px;
+  border-radius: 2px;
+}
+
+.backspace:hover,
+.clear:hover {
+  background-color: rgb(68, 72, 90);
 }
 
 .operands-and-operators {
@@ -63,8 +85,16 @@ margin: 0 4px;
 
 .operand {
   flex: 1;
-  font-size: x-large;
-  margin: 1px;
+  font-size: 25px;
+  background-color: rgba(68, 72, 90, 0.87);
+  font-weight: bolder;
+  border: solid lightslategray 1px;
+  border-radius: 2px;
+  margin: 2px;
+}
+
+.operand:hover {
+  background-color: rgb(68, 72, 90);
 }
 
 .zero, 
@@ -81,15 +111,23 @@ margin: 0 4px;
 }
 
 .operators {
-  flex: 1;
+  flex: .993;
   flex-direction: column;
   display: flex;
 }
 
 .operator {
   flex: 1;
-  font-size: x-large;
-  margin: 1px;
+  font-size: 25px;
+  background-color: rgba(68, 72, 90, 0.87);
+  font-weight: bolder;
+  border: solid lightslategray 1px;
+  border-radius: 2px;
+  margin: 2px;
+}
+
+.operator:hover {
+  background-color: rgb(68, 72, 90);
 }
 
 .add-and-subtract,
@@ -101,7 +139,7 @@ margin: 0 4px;
 
 .add-and-subtract, 
 .multiply-and-divide {
-  flex: 1.205;
+  flex: 1.11;
 }
 
 .seven-through-nine,
